@@ -14,16 +14,15 @@
 <body>
     <div class="container">
         <h2>Emploi du Temps</h2>
-        <div id="timetable"></div>
+        <div id="timetable" class="timetable"></div>
+        <label for="classeSelect">Sélectionner la classe :</label>
+        <select id="classeSelect">
+            <option value="">Sélectionnez une classe</option>
+            <option value="MSI">Élève de MSI</option>
+            <option value="S">Élève de S</option>
+        </select>
+        <div id="listeEleves" class="liste-eleves"></div>
     </div>
-
-    <select id="classeSelect">
-        <option value="">Sélectionnez une classe</option>
-        <option value="MSI">Élève de MSI</option>
-        <option value="S">Élève de S</option>
-    </select>
-    
-    <ul id="listeEleves"></ul>
     
 </body>
 </html>
