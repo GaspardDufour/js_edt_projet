@@ -2,11 +2,11 @@ const mysql = require("mysql");
 
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: "localhost", // Serveur de BD
-  port: "8889", // Numéro de port
-  user: "root", // Utilisateur de BD
-  password: "root", // Mot de passe
-  database: "Gestion_edt_js", // Nom de la BD
+  host: "34.155.68.129", // Serveur de BD
+  port: "3306", // Numéro de port
+  user: "id-inst-bdd-edt0", // Utilisateur de BD
+  password: "admin", // Mot de passe
+  database: "database_edt", // Nom de la BD
 });
 
 pool.getConnection((err, connection) => {
