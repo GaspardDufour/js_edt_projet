@@ -30,5 +30,5 @@ app.get('/eleves/:nomClasse', (req, res) => {
 
 const port = 3306;
 app.listen(port, () => {
-    console.log(`Serveur en écoute sur http://localhost:${port}`);
+    console.log(`Serveur en écoute sur ${port}`);
 });
