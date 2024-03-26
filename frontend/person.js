@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         axios.get(`http://localhost:3000/eleves/${nomClasse}`)
             .then((response) => {
-                const eleves = response.data;
+                const eleves = response.data;   
                 listeEleves.innerHTML = '';
 
                 // Ajouter un titre et des en-têtes

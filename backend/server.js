@@ -28,7 +28,7 @@ app.get('/eleves/:nomClasse', (req, res) => {
     });
 });
 
-const port = 3306;
+const port = 3000;
 app.listen(port, () => {
     console.log(`Serveur en écoute sur ${port}`);
 });
