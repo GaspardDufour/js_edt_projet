@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+/* Styles pour la liste des élèves */
+#listeEleves .header {
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+#listeEleves .eleve-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#listeEleves .prenom, #listeEleves .nom {
+    margin-right: 5px; /* Réduit l'espace entre les prénoms et les noms */
+    flex: 0 0 120px; /* Définit une largeur fixe pour chaque colonne */
+    padding: 0.25em;
+}
+
+#listeEleves .prenom {
+    text-align: left;
+}
+
+#listeEleves .nom {
+    text-align: left;
+    flex-grow: 2; /* Permet au nom de prendre plus d'espace si nécessaire */
+}
+
+/* Styles de tableau existants */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.select-container {
+    margin-bottom: 20px;
+}

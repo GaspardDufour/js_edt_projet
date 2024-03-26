@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emploi du Temps</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="service.js"></script>
+    <script src="person.js"></script>
+    
+
+</head>
+<body>
+    <div class="container">
+        <h2>Emploi du Temps</h2>
+        <div id="timetable"></div>
+    </div>
+
+    <select id="classeSelect">
+        <option value="">Sélectionnez une classe</option>
+        <option value="MSI">Élève de MSI</option>
+        <option value="S">Élève de S</option>
+    </select>
+    
+    <ul id="listeEleves"></ul>
+    
+</body>
+</html>
