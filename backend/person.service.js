@@ -16,4 +16,18 @@ const getElevesPrenoms = (idClasse) => {
     });
 };
 
+const getClasseEDT = (idClasse) => {
+    return new Promise((resolve, reject) => {
+        // Supposons que votre table d'élèves s'appelle 'Eleves'
+        const query = 'SELECT C.* FROM Cours C JOIN EmploisDuTempsCours E ON C.IdCours = E.IdCours WHERE E.idClasse = ?;';
+        pool.query(query, [idClasse], (error, results, fields) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(results); // Ici, `results` est un tableau d'objets cours
+            }
+        });
+    });
+};
+
 module.exports = getElevesPrenoms;
