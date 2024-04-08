@@ -17,7 +17,6 @@ h2 {
     color: #333;
 }
 
-/* Styles pour la liste des élèves */
 #listeEleves .header {
     font-weight: bold;
     display: flex;
@@ -29,9 +28,12 @@ h2 {
     justify-content: flex-start;
 }
 
-#listeEleves .prenom, #listeEleves .nom {
-    margin-right: 5px; /* Réduit l'espace entre les prénoms et les noms */
-    flex: 0 0 120px; /* Définit une largeur fixe pour chaque colonne */
+#listeEleves .prenom,
+#listeEleves .nom,
+#listeEleves .cours {
+    margin-right: 5px;
+    flex: 1;
+    /* Ajusté pour équilibrer l'espace */
     padding: 0.25em;
 }
 
@@ -41,61 +43,35 @@ h2 {
 
 #listeEleves .nom {
     text-align: left;
-    flex-grow: 2; /* Permet au nom de prendre plus d'espace si nécessaire */
 }
 
-/* Styles de tableau existants */
-table {
-    width: 100%;
-    border-collapse: collapse;
+#listeEleves .cours {
+    text-align: left;
+    flex-grow: 2;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ddd;
 }
 
-th, td {
-    text-align: left;
+th,
+td {
     padding: 8px;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
 }
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.select-container {
-    margin-bottom: 20px;
-}
 .timetable {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    grid-auto-rows: minmax(50px, auto);
     gap: 1px;
     background-color: #ccc;
     border: 1px solid #ccc;
 }
 
-.timetable-header {
-    background-color: #333;
-    color: white;
-    padding: 5px;
-    text-align: center;
-}
-
-.timetable-cell {
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
 .timetable-cell-occupied {
-    background-color: #ff0; 
+    background-color: #ff0;
 }
-
-

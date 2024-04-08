@@ -1,3 +1,5 @@
+//server.js
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require('cors');
@@ -27,6 +29,18 @@ app.get('/eleves/:nomClasse', (req, res) => {
         res.json(results);
     });
 });
+
+app.use(cors());
+
+const { getClasseEDT } = require('./person.service.js');
+
+app.get('/api/classes/:idClasse/cours', (req, res) => {
+    const idClasse = req.params.idClasse;
+    getClasseEDT(idClasse)
+        .then(cours => res.json(cours))
+        .catch(error => res.status(500).send(error.message));
+});
+
 
 const port = 3000;
 app.listen(port, () => {
