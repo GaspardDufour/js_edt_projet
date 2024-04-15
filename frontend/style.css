@@ -17,61 +17,77 @@ h2 {
     color: #333;
 }
 
-#listeEleves .header {
+#listeEleves .header, #listeCours .header-cours {
     font-weight: bold;
     display: flex;
     margin-bottom: 5px;
 }
 
-#listeEleves .eleve-container {
+#listeEleves .eleve-container, #listeCours .cours-row {
     display: flex;
     justify-content: flex-start;
 }
 
-#listeEleves .prenom,
-#listeEleves .nom,
-#listeEleves .cours {
+#listeEleves .prenom, #listeEleves .nom, #listeCours .jour, #listeCours .heure-debut, #listeCours .heure-fin, #listeCours .matiere, #listeCours .salle {
     margin-right: 5px;
     flex: 1;
-    /* Ajusté pour équilibrer l'espace */
     padding: 0.25em;
 }
 
-#listeEleves .prenom {
+#listeCours .matiere, #listeCours .salle {
+    flex-grow: 2; /* Permet aux colonnes de la matière et de la salle de prendre plus d'espace */
+}
+
+#listeEleves .prenom, #listeEleves .nom, #listeCours .jour, #listeCours .heure-debut, #listeCours .heure-fin, #listeCours .matiere, #listeCours .salle {
     text-align: left;
 }
 
-#listeEleves .nom {
-    text-align: left;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-#listeEleves .cours {
-    text-align: left;
-    flex-grow: 2;
-}
-
-table,
-th,
-td {
+th, td {
     border: 1px solid #ddd;
-}
-
-th,
-td {
+    text-align: center;
     padding: 8px;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
 }
 
-.timetable {
-    display: grid;
-    gap: 1px;
-    background-color: #ccc;
-    border: 1px solid #ccc;
+td {
+    background-color: #fff;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
 }
 
 .timetable-cell-occupied {
-    background-color: #ff0;
+    background-color: #d7ebff; /* Une couleur douce pour les cellules avec des cours */
+}
+
+.timetable-cell-empty {
+    background-color: #f9f9f9; /* Une couleur différente pour les cellules vides */
+}
+
+.table-hours,
+.table-days {
+    background-color: #eef;
+    font-weight: bold;
+}
+
+/* Amélioration de la visibilité des frontières */
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+/* Pour améliorer la distinction des en-têtes */
+thead th {
+    background-color: #666;
+    color: white;
 }

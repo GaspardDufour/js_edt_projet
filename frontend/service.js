@@ -1,3 +1,4 @@
+//service.js
 // Ajout d'un service (par exemple, une nouvelle classe)
 const addService = (service) => {
     axios.post("http://localhost:3000/service/add", service)

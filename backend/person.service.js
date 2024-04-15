@@ -17,11 +17,12 @@ const getElevesPrenoms = (idClasse) => {
 
 const getClasseEDT = (idClasse) => {
     return new Promise((resolve, reject) => {
-        const query = 'SELECT C.* FROM Cours C JOIN EmploisDuTempsCours E ON C.IdCours = E.IdCours WHERE E.idClasse = ?;';
+        const query = 'SELECT C.Jour, C.HeureDebut, C.HeureFin, C.Matiere, C.Salle FROM Cours C JOIN EmploisDuTempsCours E ON C.IdCours = E.IdCours WHERE E.IdClasse = ?';
         pool.query(query, [idClasse], (error, results, fields) => {
             if (error) {
                 reject(error);
             } else {
+                console.log(results);
                 resolve(results); // Ici, `results` est un tableau d'objets cours
             }
         });
@@ -29,4 +30,4 @@ const getClasseEDT = (idClasse) => {
 };
 
 
-module.exports = getElevesPrenoms;
+module.exports = { getElevesPrenoms, getClasseEDT };
