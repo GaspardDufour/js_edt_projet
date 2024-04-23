@@ -78,7 +78,6 @@ const { getElevesPrenoms, getClasseEDT } = require('./person.service.js');
 
 app.get('/eleves/:nomClasse', (req, res) => {
     const nomClasse = req.params.nomClasse;
-    console.log("1" + nomClasse);
     let query = 'SELECT * FROM Eleves WHERE IdClasse = (SELECT IdClasse FROM Classes WHERE NomClasse = ?)';
     pool.query(query, [nomClasse], (error, results) => {
         if (error) {
@@ -92,7 +91,6 @@ app.get('/eleves/:nomClasse', (req, res) => {
 app.get('/classes/:nomClasse/cours', (req, res) => {
     //const idClasse = req.params.idClasse;     
     const nomClasse = req.params.nomClasse;
-    console.log("2" + nomClasse);
     //const query = 'SELECT C.Jour, C.HeureDebut, C.HeureFin, C.Matiere, C.Salle FROM Cours C JOIN EmploisDuTempsCours E ON C.IdCours = E.IdCours WHERE IdClasse = (SELECT IdClasse FROM Classes WHERE NomClasse = ?)';    
     const query = `SELECT C.Jour, C.HeureDebut, C.HeureFin, C.Matiere, C.Salle FROM Cours C JOIN EmploisDuTempsCours E ON C.IdCours = E.IdCours WHERE IdClasse = (SELECT IdClasse FROM Classes WHERE NomClasse = '${nomClasse}')`;
     pool.query(query, [nomClasse], (error, results) => {
@@ -100,7 +98,6 @@ app.get('/classes/:nomClasse/cours', (req, res) => {
             console.error('Erreur lors de la récupération des informations des cours:', error);
             res.status(500).send('Erreur interne du serveur');
         } else {
-            console.log(results);
             res.json(results);
         }
     });
